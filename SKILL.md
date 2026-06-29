@@ -13,16 +13,17 @@ description: >-
 
 # SEOcompass Skill
 
-Run the core SEO + GEO + AEO loop with Claude. Three jobs, each a focused
-slash command:
+Run the core SEO + GEO + AEO loop with Claude. Focused slash commands:
 
 - **`/ai-visibility <domain>`** — does AI search cite you? Share-of-Voice vs
   competitors across ChatGPT / Gemini / Perplexity / Google AI Overviews.
 - **`/seo-wins`** — paste a Google Search Console export; get a ranked list of
-  quick wins (striking-distance keywords, CTR gaps, cannibalization) scored by
-  traffic upside × winnability.
+  quick wins (striking-distance keywords, CTR gaps, cannibalization).
 - **`/backlinks <topic>`** — find sites worth pitching for a backlink, draft a
   personalized, non-spammy pitch, and find a contact.
+- **`/audit <url>`** — hosted SEO + AI-search audit of any URL using a free
+  `SEOCOMPASS_API_KEY` (no third-party keys needed; get one at app.seocompass.co
+  → Settings → Skill API key).
 
 Start with `/seocompass` for orientation, or jump straight into any command.
 

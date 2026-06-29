@@ -9,8 +9,11 @@ A free, open-source [Claude](https://claude.com/claude-code) skill for real
   Overviews** recommend you or your competitors, with a Share-of-Voice score.
 - 🔗 **`/backlinks`** — find link prospects, draft a pitch that gets replies, and
   find a contact.
+- 📋 **`/audit`** — run a hosted SEO + AI-search audit on any URL with a free
+  SEOcompass key (no other API keys needed).
 
-Works with bring-your-own API keys. No account required.
+Works with bring-your-own API keys, or a free SEOcompass key for hosted audits.
+No paid account required.
 
 > Want this on autopilot — one-click Google Search Console, automatic keyword
 > enrichment, AI Share-of-Voice tracked over time, and outreach sent from your
@@ -25,8 +28,8 @@ Works with bring-your-own API keys. No account required.
 ```bash
 git clone https://github.com/growtlab-eng/seocompass-skill ~/.claude/skills/seocompass
 ```
-Restart Claude Code. The `/seocompass`, `/ai-visibility`, `/seo-wins`, and
-`/backlinks` commands become available. Start with `/seocompass`.
+Restart Claude Code. The `/seocompass`, `/ai-visibility`, `/seo-wins`,
+`/backlinks`, and `/audit` commands become available. Start with `/seocompass`.
 
 **Any other Claude surface:** drop this folder in and reference `SKILL.md`.
 
@@ -36,18 +39,21 @@ Set only the keys for the commands you'll use:
 
 | For | Env var | Get it |
 |---|---|---|
+| **Hosted audit (`/audit`)** | `SEOCOMPASS_API_KEY` | **Free** at [app.seocompass.co](https://app.seocompass.co/?utm_source=github&utm_medium=claude-skill&utm_campaign=skill) → Settings → Skill API key |
 | Keyword volume / difficulty (`/seo-wins`, `/backlinks`) | `DATAFORSEO_LOGIN`, `DATAFORSEO_PASSWORD` | [dataforseo.com](https://dataforseo.com) (pay-as-you-go) |
 | Live Google SERP (`/backlinks`) | `SERPER_API_KEY` | [serper.dev](https://serper.dev) (~$0.001/search) |
 | Email finder (`/backlinks`, optional) | `HUNTER_API_KEY` | [hunter.io](https://hunter.io) |
 | AI engines (`/ai-visibility`) | your LLM provider key(s) | — (or use the model you're already running) |
 
 `/seo-wins` works with **zero keys** if you paste a GSC export — it just scores
-from Search Console signals (keys only sharpen it).
+from Search Console signals (keys only sharpen it). `/audit` needs only the free
+`SEOCOMPASS_API_KEY` — no third-party keys at all.
 
 ## Quick start
 
 ```
 /seocompass                      # orientation + the right order
+/audit yourdomain.com/page       # hosted SEO + AI-search audit (free key)
 /seo-wins                        # then paste your GSC Queries export
 /ai-visibility yourdomain.com    # are AI engines recommending you?
 /backlinks "your topic"          # find + pitch link prospects
